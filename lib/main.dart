@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.deepOrange,
         ),
         useMaterial3: true,
-        appBarTheme: const AppBarTheme(
-          titleTextStyle: TextStyle(
-              color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
-        ),
+        // appBarTheme: const AppBarTheme(
+        //   titleTextStyle: TextStyle(
+        //       color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+        // ),
       ),
       home: LoginPage(),
     );
