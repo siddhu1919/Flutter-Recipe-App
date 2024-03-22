@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
+import 'package:recipe_app/services/auth_service.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
 
 class LoginPage extends StatefulWidget {
@@ -13,7 +13,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _isObscure = true;
-
+  final GlobalKey<FormState> _loginformKey = GlobalKey();
+  String? username, password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,48 +65,79 @@ class _LoginPageState extends State<LoginPage> {
       width: MediaQuery.sizeOf(context).width * 0.90,
       height: MediaQuery.sizeOf(context).height * 0.30,
       child: Form(
+          key: _loginformKey,
           child: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          TextFormField(
-            decoration: InputDecoration(hintText: "Username"),
-          ),
-          TextFormField(
-            obscureText: _isObscure,
-            decoration: InputDecoration(
-              hintText: "Password",
-              suffixIcon: IconButton(
-                onPressed: () {
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              TextFormField(
+                initialValue: "kminchelle",
+                onSaved: (value) {
                   setState(() {
-                    _isObscure = !_isObscure;
+                    // debugPrint(value);
+                    username = value;
                   });
                 },
-                icon: Icon(
-                  _isObscure ? Icons.visibility : Icons.visibility_off,
+                keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Email can\'t be empty';
+                  }
+                },
+                decoration: InputDecoration(
+                    hintText: "Username",
+                    prefixIcon: Icon(
+                      Icons.person,
+                      color: Colors.deepPurpleAccent,
+                    )),
+              ),
+              TextFormField(
+                initialValue: "0lelplR",
+                onSaved: (value) {
+                  setState(() {
+                    password = value;
+                    // debugPrint(value);
+                  });
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Password can\'t be empty';
+                  } else if (value.length < 5) {
+                    return 'Password must be at least 8 characters long';
+                  }
+                },
+                obscureText: _isObscure,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  hintText: "Password",
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _isObscure = !_isObscure;
+                      });
+                    },
+                    icon: Icon(
+                      _isObscure ? Icons.visibility : Icons.visibility_off,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-          SizedBox(
-            height: 35,
-          ),
-          _loginButton(),
-          SizedBox(
-            height: 30,
-            child: Text(
-              "Or",
-              style: TextStyle(
-                color: Colors.deepPurpleAccent,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
+              _loginButton(),
+              Text(
+                "Or",
+                style: TextStyle(
+                  color: Colors.deepPurpleAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
               ),
-            ),
-          ),
-          _socialButtons(),
-        ],
-      )),
+              SafeArea(child: _socialButtons()),
+            ],
+          )),
     );
   }
 
@@ -124,7 +156,15 @@ class _LoginPageState extends State<LoginPage> {
               backgroundColor:
                   MaterialStateProperty.all(Colors.deepPurpleAccent),
             ),
-            onPressed: () {},
+            onPressed: () async {
+              if (_loginformKey.currentState?.validate() ?? false) {
+                _loginformKey.currentState?.save();
+                // debugPrint("$username - $password");
+              bool result = await AuthService().login(username!, password!);
+
+
+              }
+            },
             child: const Text(
               "Login",
               style: TextStyle(
@@ -136,19 +176,14 @@ class _LoginPageState extends State<LoginPage> {
 
   // TODO:Create me a widget for google facebook and github login buttons.
   Widget _socialButtons() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        SocialLoginButton(
-          buttonType: SocialLoginButtonType.google,
-          onPressed: () {},
-        ),
-      ],
+    return SocialLoginButton(
+      buttonType: SocialLoginButtonType.google,
+      disabledBackgroundColor: Colors.deepPurpleAccent,
+      onPressed: () {},
     );
+
+    // TODO:Create me a widget for the create account button.
+
+    // TODO:Create me a widget for the forgot password button.
   }
-
-  // TODO:Create me a widget for the create account button.
-
-  // TODO:Create me a widget for the forgot password button.
 }
