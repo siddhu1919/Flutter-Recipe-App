@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  social_login_buttons: ^1.0.7
 
 
   # The following adds the Cupertino Icons font to your application.
