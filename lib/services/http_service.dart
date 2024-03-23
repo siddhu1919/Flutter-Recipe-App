@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:recipe_app/const.dart';
 
 class HTTPservice {
   static final HTTPservice _singleton = HTTPservice._internal();
@@ -13,10 +15,40 @@ class HTTPservice {
     final headers = {
       'Content-Type': 'application/json',
     };
+    if (bearerToken != null) {
+      headers["Authorization"] = "Bearer $bearerToken";
+    }
     final options = BaseOptions(
-      baseUrl: 'https://api.github.com/',
-      headers: headers,
-    );
+        baseUrl: API_BASE_URL,
+        headers: headers,
+        validateStatus: (status) {
+          if (status == null) {
+            return false;
+          }
+          return status < 500;
+        });
     _dio.options = options;
+  }
+
+  Future<Response?> post(String path, Map data) async {
+    try {
+      final response = await _dio.post(
+        path,
+        data: data,
+      );
+      return response;
+    } catch (e) {
+      debugPrint("$e");
+    }
+  }
+
+  Future<Response?> get(String path) async {
+    try {
+      final response = await _dio.get(path);
+      return response;
+    } catch (e) {
+      print(e);
+    }
+    return null;
   }
 }

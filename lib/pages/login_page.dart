@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/services/auth_service.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+import 'package:status_alert/status_alert.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -160,9 +161,20 @@ class _LoginPageState extends State<LoginPage> {
               if (_loginformKey.currentState?.validate() ?? false) {
                 _loginformKey.currentState?.save();
                 // debugPrint("$username - $password");
-              bool result = await AuthService().login(username!, password!);
-
-
+                bool result = await AuthService().login(username!, password!);
+                // print(result);
+                if (result) {
+                  Navigator.pushReplacementNamed(context, "/home");
+                } else {
+                  StatusAlert.show(
+                    context,
+                    duration: const Duration(seconds: 2),
+                    title: "Login Failed",
+                    subtitle: 'Please try again',
+                    configuration: const IconConfiguration(icon: Icons.error),
+                    maxWidth: 260,
+                  );
+                }
               }
             },
             child: const Text(

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:recipe_app/pages/homepage.dart';
 import 'package:recipe_app/pages/login_page.dart';
 
 void main() {
@@ -25,7 +26,12 @@ class MyApp extends StatelessWidget {
         //       color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
         // ),
       ),
-      home: LoginPage(),
+      // home: LoginPage(),
+      initialRoute: "/login",
+      routes: {
+        "/login": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+      },
     );
   }
 }
