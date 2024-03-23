@@ -14,7 +14,7 @@ With a user-friendly interface and a collection of delectable recipes, our app i
 
 ## 🦄 Project Images
 - **1. Login Page:**
-![1](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/51405612-e5a8-410a-8a8b-797da035ef3c)
+![1](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/51405612-e5a8-410a-8a8b-797da035ef3c)(width="150")
 
 - **2. Home Page - All Recipes List:**
 ![2](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/e10685a2-5c05-499f-a63a-8e86ce1c8431)
