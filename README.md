@@ -15,14 +15,19 @@ With a user-friendly interface and a collection of delectable recipes, our app i
 ## 🦄 Project Images
 - **1. Login Page:**
 <img src="https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/51405612-e5a8-410a-8a8b-797da035ef3c" alt="App Screenshot" width="300"/>
+
 - **2. Home Page - All Recipes List:**
 <img src="https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/e10685a2-5c05-499f-a63a-8e86ce1c8431" alt="App Screenshot" width="300"/>
+
 - **3. Home Page - Snack Recipes List:**
 <img src="https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/87f31758-6a14-48f9-816e-6bd6085f9e0b" alt="App Screenshot" width="300"/>
+
 - **4. Home Page - Breakfast Recipes List:**
 <img src="https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/1038cad4-e284-4b2b-962d-24ebd269f148" alt="App Screenshot" width="300"/>
+
 - **5. Home Page - Dinner Recipes List:**
 <img src="https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/c7fbd950-6643-4970-9ba1-6dfaf2e683ad" alt="App Screenshot" width="300"/>
+
 - **6. Recipe Page - Recipe Details, Image , Instructions:**
 <img src="https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/6ac758df-ac1d-4fb7-879c-0682a1fa8ab1" alt="App Screenshot" width="300"/>
 
