@@ -13,6 +13,24 @@ With a user-friendly interface and a collection of delectable recipes, our app i
 - **Learning-Friendly Codebase:** Built with beginners in mind, our codebase is a great starting point for anyone looking to dive into the world of Flutter app development.
 
 ## 🦄 Project Images
+- **1. Login Page:**
+![1](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/51405612-e5a8-410a-8a8b-797da035ef3c)
+
+- **2. Home Page - All Recipes List:**
+![2](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/e10685a2-5c05-499f-a63a-8e86ce1c8431)
+
+- **3. Home Page - Snack Recipes List:**
+  ![3](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/87f31758-6a14-48f9-816e-6bd6085f9e0b)
+
+- **4. Home Page - Breakfast Recipes List:**
+  ![4](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/1038cad4-e284-4b2b-962d-24ebd269f148)
+
+- **5. Home Page - Dinner Recipes List:**
+  ![5](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/c7fbd950-6643-4970-9ba1-6dfaf2e683ad)
+
+- **6. Recipe Page - Recipe Details, Image , Instructions:**
+  ![6](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/6ac758df-ac1d-4fb7-879c-0682a1fa8ab1)
+
 
 ## 🛠️ Dependencies
 
