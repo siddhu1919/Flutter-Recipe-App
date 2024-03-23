@@ -69,7 +69,7 @@ Contributions are what make the open-source community such an amazing place to l
 📩 Contact
 Got questions or suggestions? Feel free to reach out!
 
-- Github: your.email@example.com
+- Github: https://github.com/siddhu1919/
 - Linkedin: https://www.linkedin.com/in/siddharth-g-singh-46b610201/
 
 Happy Cooking with DelishRecipes! 🍽️👩‍🍳👨‍🍳
