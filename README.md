@@ -12,7 +12,11 @@ With a user-friendly interface and a collection of delectable recipes, our app i
 - **Beautiful UI:** Experience the joy of cooking with a beautifully designed app, featuring an engaging user interface that makes browsing recipes a delightful adventure.
 - **Learning-Friendly Codebase:** Built with beginners in mind, our codebase is a great starting point for anyone looking to dive into the world of Flutter app development.
 
-## 🦄 Project Images
+## 🔷📱 Project Demo
+![recipe_app_demo-gif](https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/0f50fea5-8902-43c2-9e38-3fb4e9b09500)
+
+
+## 🦄 Project Screens | Pages
 - **1. Login Page:**
 <img src="https://github.com/siddhu1919/Flutter-Recipe-App/assets/85176765/51405612-e5a8-410a-8a8b-797da035ef3c" alt="App Screenshot" width="250"/>
 
